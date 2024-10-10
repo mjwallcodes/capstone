@@ -1,0 +1,31 @@
+<div class="row pt-3 bg-dark justify-content-center">
+	<div class="col-sm-6 bg-dark">
+		<div class="card">
+			<div class="card-header text-center bg-dark text-white">
+				<h3>Add Password</h3>
+				<h6>Password must have at least one capital, at least one lower case, at least one number, and at least one special character</h4>
+				<h5 class="text-success" ng-bind="createStatus"></h5>
+			</div>			
+			<div class="card-body bg-info">
+			<form name="createForm">
+				<div class="form-group">
+					<label for="passord" class="font-weight-bold">Password</label>
+					<input ng-model="password.password" required ng-minlength="8" name="password"
+						type="text" class="form-control" id="password">					
+					<span ng-show="createForm.password.$touched && createForm.password.$invalid"
+						class="text-danger">
+						required and must be at least 8 characters.
+					</span>					
+				</div>	
+			</form>
+		</div>
+		<div class="card-footer text-center bg-dark">
+			<button type="button" class="btn btn-success text-dark"
+				ng-disabled="createForm.$invalid || disableCreate"
+				ng-click="createPassword()">Create</button>			
+			<button type="button" class="btn btn-danger2 text-dark"
+				ng-click="clear()">Clear</button>
+		</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card mt-3">
+	<div class="card-header bg-dark text-white">
+		<h4>List Of Passwords</h4>
+		<button class="btn btn-info text-dark" ng-click="getAllPasswords()">Refresh List</button>
+	</div>
+	<div class="card-body">
+		<table class="table table-hover bg-info">
+			<thead class="thead-dark">
+				<tr>
+					<th>Password ID</th>
+					<th>Password Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="password in passwords" ng-click="goToUpdateView(password.id)">
+					<td>{{password.id}}</td>
+					<td>{{password.password}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="card-footer bg-dark text-light">Please select a password for
+		update/delete</div>
+</div>

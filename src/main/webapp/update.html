@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card bg-dark" style="top:50%;">
+			<div class="card-header text-center">
+				<h3 class="text-white">Update Password View</h3>
+				<h5 class="text-success text-center" ng-bind="updateStatus"></h5>
+			</div>			
+		
+			<div class="card-body">
+			<form name="updateForm" class="bg-dark text-white">
+				<div class="form-group">
+					<label for="passwordId" class="font-weight-bold">New Password:</label>
+					<input ng-model="password.password" required ng-minlength="8" name="passwordinput"
+						type="text" class="form-control" id="passwordId">
+						<span class="text-danger" ng-if="!updateForm.passwordId.$valid">
+						required and must be at least 8 characters
+						</span>
+				</div>
+			</form>
+			</div>
+			<div class="card-footer text-center">
+				<button type="button" class="btn btn-success" 
+				ng-disabled="updateForm.$invalid" 
+				ng-click="updatePassword()">Update</button>
+				<button type="button" class="btn btn-danger"
+				ng-disabled="disableUpdate" ng-click="deletePassword()">Delete</button>
+				<button type="button" class="btn btn-info" ng-click="goToSearchView()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
